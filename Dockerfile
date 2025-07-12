@@ -8,7 +8,7 @@ WORKDIR $APP_HOME
 
 # Adjust COPY depending on where your jar is
 # If your jar is in the root of build context:
-COPY *.jar app.jar
+COPY app.jar app.jar
 
 # If your jar is inside an app folder, use:
 # COPY app/*.jar app.jar
