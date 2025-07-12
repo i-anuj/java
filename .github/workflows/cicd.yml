@@ -96,7 +96,7 @@ jobs:
          cache: maven
      
     - name: Docker login
-      uses: docker/login-action@4
+      uses: docker/login-action@3.4.0
       with:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
