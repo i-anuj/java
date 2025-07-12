@@ -94,6 +94,12 @@ jobs:
          java-version: '17'
          distribution: 'temurin'
          cache: maven
+
+    - name: Download JAR artifact
+      uses: actions/download-artifact@v3
+      with:
+        name: app-jar
+        path: ./app
      
     - name: Docker login
       uses: docker/login-action@3.4.0
@@ -102,7 +108,7 @@ jobs:
         password: ${{ secrets.DOCKER_PASSWORD }}
 
     - name: Copy JAR to root for Docker build
-      run: cp target/*.jar app.jar
+      run: cp ./app/*.jar ./app.jar
 
     - name: docker build
       run: docker build -t hacked01/app-jar:latest .
