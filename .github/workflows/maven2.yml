@@ -23,7 +23,7 @@ jobs:
       run: mvn compile
 
     - name: Notify Slack (Compile)
-      uses: 8398a7/action-slack@v2.1.1
+      uses: 8398a7/action-slack@v3
       with:
         status: ${{ job.status }}
         fields: job,commit,repo,ref
@@ -53,7 +53,7 @@ jobs:
         path: target/*.jar
 
     - name: Notify Slack (Build)
-      uses: 8398a7/action-slack@v2.1.1
+      uses: 8398a7/action-slack@v3
       with:
         status: ${{ job.status }}
         fields: job,commit,repo,ref
@@ -92,7 +92,7 @@ jobs:
       run: docker ps
 
     - name: Notify Slack (Docker)
-      uses: 8398a7/action-slack@v2.1.1
+      uses: 8398a7/action-slack@v3
       with:
         status: ${{ job.status }}
         fields: job,commit,repo,ref
