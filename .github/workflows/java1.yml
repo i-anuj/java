@@ -45,10 +45,10 @@ jobs:
         sudo apt-get install -y trivy
 
     - name: Trivy FS Scan
-      run: trivy fs --exit-code 0 --severity HIGH,CRITICAL --format table -o fs-report.json .
+      run: trivy fs --exit-code 1 --severity HIGH,CRITICAL --format table -o fs-report.json .
 
     - name: Upload Trivy FS scan report
-      uses: actions/checkout@v4
+      uses: actions/upload-checkout@v4
       with:
         name: trivy-fs-report
         path: fs-report.json
