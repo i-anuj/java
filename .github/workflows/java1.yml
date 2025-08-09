@@ -48,9 +48,8 @@ jobs:
       run: trivy fs --exit-code 1 --severity HIGH,CRITICAL --format table -o fs-report.json .
 
     - name: Upload Trivy FS scan report
-      uses: actions/upload-artifact@v4
       with:
-        name: trivy-fs-report.json
+        name: trivy-fs-report
         path: fs-report.json
 
 
