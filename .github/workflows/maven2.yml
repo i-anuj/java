@@ -22,7 +22,7 @@ jobs:
         cache: maven
         
     - name: Build with Maven
-      run: mvn compile
+      run: mvn validate
 
     - name: Notify Slack (Compile)
       uses: 8398a7/action-slack@v3
